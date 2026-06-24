@@ -4,12 +4,6 @@
     background-image: linear-gradient(90deg, #002f52, #2a0e41);
 }
 
-.App-header{
-    background-color: #FFF;    
-    display: flex;
-    justify-content: flex-start;
-    padding: 0 30px;
-}
 
 .opcoes{
     display: flex;
