@@ -1,4 +1,6 @@
-import { livros } from './dadosUltimosLancamentos';
+import { Titulo } from '../Titulo';
+import CardRecomenda from '../CardRecomenda';
+import imagemLivro from '../../imagens/livro2.png';
 import styled from 'styled-components';
 
 const UltimosLancamentosContainer = styled.section`
@@ -6,17 +8,6 @@ const UltimosLancamentosContainer = styled.section`
     background-color: #FFFFFF;
 `;
 
-const Titulo = styled.h2`
-    color: #E8AE3A;
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    text-align: center;
-    width: 100%;
-    margin: 0;
-    padding: 26px 16px 24px;
-    text-transform: uppercase;
-`;
 
 const LivrosArea = styled.div`
     width: 100%;
@@ -27,36 +18,21 @@ const LivrosArea = styled.div`
 `;
 
 const LivrosContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 16px;
-    flex-wrap: wrap;
-`;
-
-const LivroCard = styled.div`
-    width: 168px;
-    background-color: #FFFFFF;
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
-
-    img {
-        display: block;
-        width: 100%;
-        height: auto;
-    }
+    width: 100%;
 `;
 
 function UltimosLancamentos() {
     return (
         <UltimosLancamentosContainer>
-            <Titulo>Ultimos Lancamentos</Titulo>
+            <Titulo cor="#000000">ÚLTIMOS LANÇAMENTOS</Titulo>
             <LivrosArea>
                 <LivrosContainer>
-                    {livros.map(livro => (
-                        <LivroCard key={livro.id}>
-                            <img src={livro.src} alt={livro.nome} />
-                        </LivroCard>
-                    ))}
+                    <CardRecomenda
+                        titulo="Talvez você se interesse por..."
+                        subtitulo="Angular 11"
+                        descricao="Construindo uma aplicação integrada com a plataforma Google."
+                        img={imagemLivro}
+                    />
                 </LivrosContainer>
             </LivrosArea>
         </UltimosLancamentosContainer>
