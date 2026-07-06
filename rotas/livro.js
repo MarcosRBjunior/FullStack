@@ -1,10 +1,10 @@
 const express = require('express');
-const livros = require('../livros.json');
+const { getLivros, postLivro, deleteLivro } = require('../controladores/livro');
 
 const rotaLivro = express.Router();
 
-rotaLivro.get('/', (req, res) => {
-    res.status(200).json(livros);
-});
+rotaLivro.get('/', getLivros);
+rotaLivro.post('/', postLivro);
+rotaLivro.delete('/:id', deleteLivro);
 
 module.exports = rotaLivro;

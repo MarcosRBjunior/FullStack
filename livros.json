@@ -1,17 +1,42 @@
 [
     {
-        "id": 1,
-        "nome": "Livro irado menos irado que o outro",
-        "src": "https://placehold.co/150x200?text=Livro+1"
+        "id": "4",
+        "nome": "Entendendo algoritmos",
+        "src": "https://placehold.co/150x200?text=Entendendo+algoritmos"
     },
     {
-        "id": 2,
-        "nome": "Livro mais lindo do mundo",
-        "src": "https://placehold.co/150x200?text=Livro+2"
+        "id": "5",
+        "nome": "Cangaceiro Javascript",
+        "src": "https://placehold.co/150x200?text=Cangaceiro+Javascript"
     },
     {
-        "id": 3,
-        "nome": "Livro iradíssimo mais que demais",
-        "src": "https://placehold.co/150x200?text=Livro+3"
+        "id": "7",
+        "nome": "Guia básico de C#",
+        "src": "https://placehold.co/150x200?text=Guia+básico+de+C%23"
+    },
+    {
+        "id": "8",
+        "nome": "Guia básico de JavaScript",
+        "src": "https://placehold.co/150x200?text=Guia+básico+de+JavaScript"
+    },
+    {
+        "id": "9",
+        "nome": "Código Limpo",
+        "src": "https://placehold.co/150x200?text=Código+Limpo"
+    },
+    {
+        "id": "10",
+        "nome": "JavaScript para iniciantes",
+        "src": "https://placehold.co/150x200?text=JavaScript+para+iniciantes"
+    },
+    {
+        "id": "11",
+        "nome": "Conhecendo o python",
+        "src": "https://placehold.co/150x200?text=Conhecendo+o+python"
+    },
+    {
+        "id": "12",
+        "nome": "Imersão Alura",
+        "src": "https://placehold.co/150x200?text=Imersão+Alura"
     }
 ]
