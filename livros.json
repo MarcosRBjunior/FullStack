@@ -2,41 +2,49 @@
     {
         "id": "4",
         "nome": "Entendendo algoritmos",
-        "src": "https://placehold.co/150x200?text=Entendendo+algoritmos"
+        "src": "https://placehold.co/150x200?text=Entendendo+algoritmos",
+        "categoria": "Algoritmos e Lógica"
     },
     {
         "id": "5",
         "nome": "Cangaceiro Javascript",
-        "src": "https://placehold.co/150x200?text=Cangaceiro+Javascript"
+        "src": "https://placehold.co/150x200?text=Cangaceiro+Javascript",
+        "categoria": "JavaScript"
     },
     {
         "id": "7",
         "nome": "Guia básico de C#",
-        "src": "https://placehold.co/150x200?text=Guia+básico+de+C%23"
+        "src": "https://placehold.co/150x200?text=Guia+básico+de+C%23",
+        "categoria": "C#"
     },
     {
         "id": "8",
         "nome": "Guia básico de JavaScript",
-        "src": "https://placehold.co/150x200?text=Guia+básico+de+JavaScript"
+        "src": "https://placehold.co/150x200?text=Guia+básico+de+JavaScript",
+        "categoria": "JavaScript"
     },
     {
         "id": "9",
         "nome": "Código Limpo",
-        "src": "https://placehold.co/150x200?text=Código+Limpo"
+        "src": "https://placehold.co/150x200?text=Código+Limpo",
+        "categoria": "Boas Práticas"
     },
     {
         "id": "10",
         "nome": "JavaScript para iniciantes",
-        "src": "https://placehold.co/150x200?text=JavaScript+para+iniciantes"
+        "src": "https://placehold.co/150x200?text=JavaScript+para+iniciantes",
+        "categoria": "JavaScript"
     },
     {
         "id": "11",
         "nome": "Conhecendo o python",
-        "src": "https://placehold.co/150x200?text=Conhecendo+o+python"
+        "src": "https://placehold.co/150x200?text=Conhecendo+o+python",
+        "categoria": "Python"
     },
     {
         "id": "12",
         "nome": "Imersão Alura",
-        "src": "https://placehold.co/150x200?text=Imersão+Alura"
+        "src": "https://placehold.co/150x200?text=Imersão+Alura",
+        "categoria": "Programação Geral"
     }
 ]

@@ -6,6 +6,8 @@ import {createGlobalStyle} from 'styled-components';
 import Header from './componentes/Header';
 import Home from './rotas/Home';
 import Favoritos from './rotas/Favoritos';
+import Categorias from './rotas/Categorias';
+import Estante from './rotas/Estante';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -36,16 +38,13 @@ root.render(
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/categorias" element={<p>Oi!</p>} />
+        <Route path="/categorias" element={<Categorias />} />
         <Route path="/favoritos" element={<Favoritos />} />
-        <Route path="/estante" element={<p>Oi!</p>} />
+        <Route path="/estante" element={<Estante />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

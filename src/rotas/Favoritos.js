@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { deleteFavorito, getFavoritos } from '../servicos/favoritos';
-import livroImg from '../imagens/livro2.png';
+import CardLivro from '../componentes/CardLivro';
+import Notificacao from '../componentes/Notificacao';
+import useNotificacao from '../hooks/useNotificacao';
 
 const AppContainer = styled.div`
-      width: 100vw;
-      height: 100vh;
+      min-height: 100vh;
       background-image: linear-gradient(90deg,#002f52 35%,#326589 165%);
       padding: 40px 24px;
       box-sizing: border-box;
@@ -26,67 +28,57 @@ const Titulo = styled.h2`
   margin: 0;
 `;
 
-const Resultado = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 16px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  min-width: 320px;
-  cursor: pointer;
-  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+const Vazio = styled.div`
+  text-align: center;
+  color: #fff;
+  margin-top: 48px;
+`;
 
-  &:hover {
-    transform: translateY(-2px);
-    border-color: #fff;
-    background: rgba(255, 255, 255, 0.18);
-  }
-
-  img {
-    width: 72px;
-    height: 96px;
-    object-fit: cover;
-  }
-
-  p {
-    color: #fff;
-    margin: 0;
-    font-size: 16px;
-    line-height: 1.4;
-  }
+const LinkEstante = styled(Link)`
+  color: #E8AE3A;
+  font-weight: 700;
 `;
 
 function Favoritos() {
   const [favoritos, setFavoritos] = useState([]);
+  const [mensagem, notificar] = useNotificacao();
 
   async function fetchFavoritos() {
       const favoritosDaAPI = await getFavoritos();
       setFavoritos(favoritosDaAPI);
   }
 
-    async function deletarFavorito(id) {
-      await deleteFavorito(id);
-      await fetchFavoritos();
-      alert(`Livro de id:${id} deletado!`);
-    }
-
   useEffect(() => {
       fetchFavoritos();
   }, []);
 
+  async function deletarFavorito(livro) {
+      await deleteFavorito(livro.id);
+      await fetchFavoritos();
+      notificar(`"${livro.nome}" removido dos favoritos.`);
+  }
+
   return (
     <AppContainer>
       <Titulo>Aqui estão seus livros favoritos:</Titulo>
-      <ListaFavoritos>
-        {favoritos.map(favorito => (
-          <Resultado key={favorito.id} onClick={() => deletarFavorito(favorito.id)}>
-            <img src={livroImg} alt={favorito.nome} />
-            <p>{favorito.nome}</p>
-          </Resultado>
-        ))}
-      </ListaFavoritos>
+      {favoritos.length === 0 ? (
+        <Vazio>
+          <p>Você ainda não tem favoritos.</p>
+          <p>Explore nossa <LinkEstante to="/estante">estante</LinkEstante> e favorite alguns livros!</p>
+        </Vazio>
+      ) : (
+        <ListaFavoritos>
+          {favoritos.map(favorito => (
+            <CardLivro
+              key={favorito.id}
+              livro={favorito}
+              acaoLabel="Remover"
+              onAcao={deletarFavorito}
+            />
+          ))}
+        </ListaFavoritos>
+      )}
+      <Notificacao mensagem={mensagem} />
     </AppContainer>
   );
 }
